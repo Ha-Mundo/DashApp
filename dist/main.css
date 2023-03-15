@@ -17,3 +17,13 @@
     background-clip: content-box; }
   ::-webkit-scrollbar-thumb:hover {
     background-color: #a8bbbf; }
+
+body {
+  display: flex;
+  text-align: center;
+  font-family: "Jost", sans-serif;
+  font-size: 0.9rem;
+  height: 100vh;
+  overflow: auto; }
+  body h1 {
+    color: dodgerblue; }

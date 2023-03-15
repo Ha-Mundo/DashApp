@@ -28,6 +28,7 @@
   ::-webkit-scrollbar-thumb:hover {
     background-color: #a8bbbf; }
 
+/* Desktop styles */
 body {
   display: flex;
   text-align: center;

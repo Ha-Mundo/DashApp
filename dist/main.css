@@ -1,3 +1,13 @@
+/* Variables */
+/* Functions */
+/* Animation Keyframes */
+@keyframes popUp {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -27,3 +37,126 @@ body {
   overflow: auto; }
   body h1 {
     color: dodgerblue; }
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: none;
+  width: 90%;
+  animation: popUp 1s ease-out 0.2s;
+  animation-fill-mode: backwards; }
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 0.5rem;
+  background-color: lavender;
+  width: 200px; }
+  nav h2 {
+    margin: 1rem;
+    padding: 0.4rem; }
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+.nav-item {
+  width: 100%; }
+  .nav-item:last-child {
+    margin-top: auto; }
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: center;
+  height: 5rem;
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed); }
+  .nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    fill: gray; }
+  .nav-link svg {
+    width: 5rem;
+    min-width: 5rem; }
+
+.active a {
+  fill: gray; }
+
+.show {
+  display: block !important; }
+
+table {
+  text-align: left;
+  display: inline-block;
+  margin: 10px auto 60px auto;
+  border-collapse: collapse;
+  overflow-y: scroll;
+  height: 73vh; }
+  table thead {
+    position: sticky;
+    top: 0px;
+    border-bottom: 1px solid lightcoral;
+    background-color: lavender; }
+    table thead select {
+      background: lavender;
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      touch-action: pan-down; }
+  table th {
+    padding: 12px 10px;
+    margin: 2px 31px;
+    text-align: center;
+    min-width: 6rem; }
+  table tr {
+    width: 36rem;
+    display: flex;
+    justify-content: space-between; }
+  table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; }
+  table tbody tr:hover {
+    background-color: #ddd; }
+
+#pie-chart-icon {
+  display: none; }
+
+#table-header {
+  font-size: 1.1rem; }
+
+#error-msg {
+  color: #333;
+  display: none; }
+
+#loader {
+  color: lightcoral;
+  display: none;
+  z-index: 9999;
+  animation: popUp 1s ease-out 0.2s;
+  animation-fill-mode: backwards; }
+
+#table-container {
+  margin: 5rem 2rem; }
+
+#chart-container {
+  width: 45%; }
+
+#chart-container h1 {
+  display: none; }
+
+#myChart {
+  display: inline-block;
+  margin: 7rem 4rem; }
+
+#date-sort {
+  cursor: pointer; }

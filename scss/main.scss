@@ -16,7 +16,38 @@ $font-stack: "Jost", sans-serif;
   align-items: $align-items;
 }
 
+/* @mixin tiny-screens() {
+  @media only screen and (max-width: 320px) {
+    @content
+  }
+} */
+
+@mixin small-screens() {
+  @media only screen and (max-width: 450px) {
+    @content;
+  }
+}
+
+@mixin medium-screens() {
+  @media only screen and (max-width: 720px) {
+    @content;
+  }
+}
+
+@mixin large-screens() {
+  @media only screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin x-large-screens() {
+  @media only screen and (min-width: 1201px) {
+    @content;
+  }
+}
+
 /* Animation Keyframes */
+
 @keyframes popUp {
   0% {
     opacity: 0;
@@ -68,13 +99,27 @@ body {
   h1 {
     color: $main-text-color;
   }
+  @include small-screens() {
+    font-size: 0.7rem;
+  }
 }
 
 main {
-  @include flex(row, center, none);
   width: 90%;
   animation: popUp 1s ease-out 0.2s;
   animation-fill-mode: backwards;
+  @include flex(row, center, none);
+  @include medium-screens() {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+  }
+  @include large-screens() {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 nav {
@@ -90,10 +135,13 @@ nav {
 }
 
 .navbar-nav {
-  @include flex(column, none, center);
   list-style: none;
   padding: 0;
   margin: 0;
+  @include flex(column, none, center);
+  @include medium-screens() {
+    flex-direction: row;
+  }
 }
 
 .nav-item {
@@ -104,11 +152,14 @@ nav {
 }
 
 .nav-link {
-  @include flex(column, none, center);
   height: 5rem;
   text-decoration: none;
   filter: grayscale(100%) opacity(0.7);
   transition: var(--transition-speed);
+  @include flex(column, none, center);
+  @include medium-screens() {
+    justify-content: center;
+  }
   &:hover {
     filter: grayscale(0%) opacity(1);
     fill: gray;
@@ -129,6 +180,12 @@ nav {
   display: block !important;
 }
 
+.logo {
+  @include medium-screens() {
+    display: none;
+  }
+}
+
 table {
   text-align: left;
   display: inline-block;
@@ -136,6 +193,16 @@ table {
   border-collapse: collapse;
   overflow-y: scroll;
   height: 73vh;
+  @include medium-screens() {
+    overflow-x: hidden;
+    display: inline-grid;
+    width: 100%;
+    margin: 1rem auto;
+    height: 70vh;
+  }
+  @include large-screens() {
+    height: 70vh;
+  }
 
   thead {
     position: sticky;
@@ -150,6 +217,10 @@ table {
       text-align: center;
       cursor: pointer;
       touch-action: pan-down;
+      @include medium-screens() {
+        text-align: center;
+        width: inherit;
+      }
     }
   }
 
@@ -158,12 +229,20 @@ table {
     margin: 2px 31px;
     text-align: center;
     min-width: 6rem;
+    @include medium-screens() {
+      padding: 2px;
+      margin: 2px 10px;
+      width: 100%;
+    }
   }
 
   tr {
     width: 36rem;
     display: flex;
     justify-content: space-between;
+    @include medium-screens() {
+      width: 100%;
+    }
   }
 
   tbody tr {
@@ -179,6 +258,12 @@ table {
 
 #pie-chart-icon {
   display: none;
+  @include large-screens() {
+    display: unset;
+  }
+  @include x-large-screens() {
+    display: none !important;
+  }
 }
 
 #table-header {
@@ -198,23 +283,69 @@ table {
   animation-fill-mode: backwards;
 }
 
-#table-container {
-  margin: 5rem 2rem;
-}
-
-#chart-container {
-  width: 45%;
-}
-
-#chart-container h1 {
-  display: none;
+#navbar {
+  @include medium-screens() {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+    z-index: 9999;
+  }
 }
 
 #myChart {
   display: inline-block;
   margin: 7rem 4rem;
+  @include large-screens() {
+    min-width: 470px;
+    margin: 0;
+  }
+  @include medium-screens() {
+    min-width: 400px;
+  }
 }
 
 #date-sort {
   cursor: pointer;
+}
+
+#chart-container {
+  width: 45%;
+  h1 {
+    display: none;
+    @include large-screens() {
+      display: block;
+    }
+  }
+
+  @include large-screens() {
+    display: none;
+    width: min-content;
+    margin: 5rem 0;
+  }
+
+  @include medium-screens() {
+    display: none;
+  }
+
+  @include x-large-screens() {
+    display: block !important;
+  }
+}
+
+#table-container {
+  margin: 5rem 2rem;
+  @include large-screens() {
+    display: block;
+    margin: 5rem auto;
+  }
+  @include medium-screens() {
+    width: max-content;
+    display: block;
+    margin: 2rem auto;
+    padding-left: 1rem;
+  }
+  @include x-large-screens() {
+    display: block !important;
+  }
 }

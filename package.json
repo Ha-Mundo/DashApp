@@ -3,6 +3,7 @@
     "watch:scss": "node-sass -w scss/ -o dist/ --recursive"
   },
   "dependencies": {
+    "chart.js": "^4.2.1",
     "node-sass": "^8.0.0"
   }
 }

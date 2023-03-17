@@ -1,5 +1,6 @@
 /* Variables */
 /* Functions */
+/* Screen Break Point */
 /* @mixin tiny-screens() {
   @media only screen and (max-width: 320px) {
     @content
@@ -44,7 +45,7 @@
   ::-webkit-scrollbar-thumb:hover {
     background-color: #a8bbbf; }
 
-/* Desktop styles */
+/* Global styles */
 body {
   display: flex;
   text-align: center;
@@ -53,7 +54,8 @@ body {
   height: 100vh;
   overflow: auto; }
   body h1 {
-    color: dodgerblue; }
+    color: dodgerblue;
+    font-family: "Ubuntu Condensed", sans-serif; }
   @media only screen and (max-width: 450px) {
     body {
       font-size: 0.7rem; } }
@@ -86,12 +88,21 @@ nav {
   margin-right: 0.5rem;
   background-color: lavender;
   width: 200px; }
+  @media only screen and (max-width: 1200px) {
+    nav {
+      width: 125px; } }
   nav h2 {
     margin: 1rem;
     padding: 0.4rem; }
 
 .logo {
-  letter-spacing: 2px; }
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Kodchasan", sans-serif;
+  color: dodgerblue; }
+  @media only screen and (max-width: 1200px) {
+    .logo {
+      font-size: 1.5rem; } }
 
 .navbar-nav {
   list-style: none;
@@ -247,7 +258,7 @@ table {
   @media only screen and (max-width: 1200px) {
     #myChart {
       min-width: 470px;
-      margin: 0; } }
+      margin: 10px 0; } }
   @media only screen and (max-width: 720px) {
     #myChart {
       min-width: 400px; } }

@@ -9,7 +9,9 @@ $light-color: #d6dee1;
 $loader-lv0: #f00;
 $loader-lv50: #00f;
 $loader-lv100: #0f0;
-$font-stack: "Jost", sans-serif;
+$font-logo: "Kodchasan", sans-serif;
+$font-stack-primary: "Jost", sans-serif;
+$font-stack-secondary: "Ubuntu Condensed", sans-serif;
 
 /* Functions */
 @mixin flex($direction, $justify-content, $align-items) {
@@ -19,6 +21,7 @@ $font-stack: "Jost", sans-serif;
   align-items: $align-items;
 }
 
+/* Screen Break Point */
 /* @mixin tiny-screens() {
   @media only screen and (max-width: 320px) {
     @content
@@ -105,16 +108,17 @@ $font-stack: "Jost", sans-serif;
   }
 }
 
-/* Desktop styles */
+/* Global styles */
 body {
   display: flex;
   text-align: center;
-  font-family: "Jost", sans-serif;
+  font-family: $font-stack-primary;
   font-size: 0.9rem;
   height: 100vh;
   overflow: auto;
   h1 {
     color: $main-text-color;
+    font-family: $font-stack-secondary;
   }
   @include small-screens() {
     font-size: 0.7rem;
@@ -144,6 +148,9 @@ nav {
   margin-right: 0.5rem;
   background-color: lavender;
   width: 200px;
+  @include large-screens() {
+    width: 125px;
+  }
 
   h2 {
     margin: 1rem;
@@ -152,7 +159,13 @@ nav {
 }
 
 .logo {
-  letter-spacing: 2px;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: $font-logo;
+  color: $main-text-color;
+  @include large-screens() {
+    font-size: 1.5rem;
+  }
 }
 
 .navbar-nav {
@@ -336,7 +349,7 @@ table {
   margin: 7rem 4rem;
   @include large-screens() {
     min-width: 470px;
-    margin: 0;
+    margin: 10px 0;
   }
   @include medium-screens() {
     min-width: 400px;

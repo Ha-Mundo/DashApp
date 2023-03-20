@@ -22,11 +22,11 @@ $font-stack-secondary: "Ubuntu Condensed", sans-serif;
 }
 
 /* Screen Break Point */
-/* @mixin tiny-screens() {
+@mixin tiny-screens() {
   @media only screen and (max-width: 320px) {
-    @content
+    @content;
   }
-} */
+}
 
 @mixin small-screens() {
   @media only screen and (max-width: 450px) {
@@ -106,6 +106,10 @@ $font-stack-secondary: "Ubuntu Condensed", sans-serif;
   &-thumb:hover {
     background-color: $light-gray-color;
   }
+
+  @include tiny-screens() {
+    display: none;
+  }
 }
 
 /* Global styles */
@@ -122,6 +126,9 @@ body {
   }
   @include small-screens() {
     font-size: 0.7rem;
+  }
+  @include tiny-screens() {
+    font-size: 0.55rem;
   }
 }
 
@@ -182,6 +189,9 @@ nav {
   width: 100%;
   &:last-child {
     margin-top: auto;
+  }
+  @include tiny-screens() {
+    width: 4.5rem;
   }
 }
 
@@ -342,6 +352,10 @@ table {
     height: 5rem;
     z-index: 9999;
   }
+  @include tiny-screens() {
+    width: 103vw;
+    margin-bottom: -2rem;
+  }
 }
 
 #myChart {
@@ -352,7 +366,11 @@ table {
     margin: 10px 0;
   }
   @include medium-screens() {
+    padding: 0.5rem;
     min-width: 400px;
+  }
+  @include tiny-screens() {
+    min-width: 370px;
   }
 }
 

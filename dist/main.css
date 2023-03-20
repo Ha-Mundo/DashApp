@@ -1,11 +1,6 @@
 /* Variables */
 /* Functions */
 /* Screen Break Point */
-/* @mixin tiny-screens() {
-  @media only screen and (max-width: 320px) {
-    @content
-  }
-} */
 /* Animation Keyframes */
 @keyframes popUp {
   0% {
@@ -44,6 +39,9 @@
     background-clip: content-box; }
   ::-webkit-scrollbar-thumb:hover {
     background-color: #a8bbbf; }
+  @media only screen and (max-width: 320px) {
+    ::-webkit-scrollbar {
+      display: none; } }
 
 /* Global styles */
 body {
@@ -59,6 +57,9 @@ body {
   @media only screen and (max-width: 450px) {
     body {
       font-size: 0.7rem; } }
+  @media only screen and (max-width: 320px) {
+    body {
+      font-size: 0.55rem; } }
 
 main {
   width: 90%;
@@ -120,6 +121,9 @@ nav {
   width: 100%; }
   .nav-item:last-child {
     margin-top: auto; }
+  @media only screen and (max-width: 320px) {
+    .nav-item {
+      width: 4.5rem; } }
 
 .nav-link {
   height: 5rem;
@@ -252,6 +256,11 @@ table {
     height: 5rem;
     z-index: 9999; } }
 
+@media only screen and (max-width: 320px) {
+  #navbar {
+    width: 103vw;
+    margin-bottom: -2rem; } }
+
 #myChart {
   display: inline-block;
   margin: 7rem 4rem; }
@@ -261,7 +270,11 @@ table {
       margin: 10px 0; } }
   @media only screen and (max-width: 720px) {
     #myChart {
+      padding: 0.5rem;
       min-width: 400px; } }
+  @media only screen and (max-width: 320px) {
+    #myChart {
+      min-width: 370px; } }
 
 #date-sort {
   cursor: pointer; }

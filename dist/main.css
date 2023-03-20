@@ -1,6 +1,6 @@
 /* Variables */
 /* Functions */
-/* Screen Break Point */
+/* Screen Break Points */
 /* Animation Keyframes */
 @keyframes popUp {
   0% {
@@ -177,6 +177,8 @@ table {
     border-bottom: 1px solid lightcoral;
     background-color: lavender; }
     table thead select {
+      border: none;
+      outline: none;
       background: lavender;
       font-size: 1rem;
       font-weight: bold;

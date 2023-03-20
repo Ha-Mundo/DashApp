@@ -21,7 +21,7 @@ $font-stack-secondary: "Ubuntu Condensed", sans-serif;
   align-items: $align-items;
 }
 
-/* Screen Break Point */
+/* Screen Break Points */
 @mixin tiny-screens() {
   @media only screen and (max-width: 320px) {
     @content;
@@ -254,7 +254,8 @@ table {
     border-bottom: 1px solid $secondary-color;
     background-color: $primary-color;
     select {
-      //border: none;
+      border: none;
+      outline: none;
       background: lavender;
       font-size: 1rem;
       font-weight: bold;

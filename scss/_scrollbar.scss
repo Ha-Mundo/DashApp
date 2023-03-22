@@ -1,0 +1,26 @@
+@use "./utilities" as *;
+@use "./breakpoints" as *;
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 20px;
+
+  &-track {
+    background-color: transparent;
+  }
+
+  &-thumb {
+    background-color: $light-color;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+
+  &-thumb:hover {
+    background-color: $light-gray-color;
+  }
+
+  @include tiny-screens() {
+    display: none;
+  }
+}

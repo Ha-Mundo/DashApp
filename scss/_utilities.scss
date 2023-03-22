@@ -1,0 +1,47 @@
+/* Variables */
+$primary-color: lavender;
+$secondary-color: lightcoral;
+$main-text-color: dodgerblue;
+$dark-color: #333;
+$gray-color: gray;
+$light-gray-color: #a8bbbf;
+$light-color: #d6dee1;
+$loader-lv0: #f00;
+$loader-lv50: #00f;
+$loader-lv100: #0f0;
+$font-logo: "Kodchasan", sans-serif;
+$font-stack-primary: "Jost", sans-serif;
+$font-stack-secondary: "Ubuntu Condensed", sans-serif;
+
+/* Functions */
+@mixin flex($direction, $justify-content, $align-items) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+/* Animation Keyframes */
+@keyframes popUp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes load {
+  0% {
+    width: 0%;
+    background: $loader-lv0;
+  }
+  50% {
+    width: 70%;
+    background: $loader-lv50;
+  }
+  100% {
+    width: 100%;
+    background: $loader-lv100;
+  }
+}

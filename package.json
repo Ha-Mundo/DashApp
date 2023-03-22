@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "watch:scss": "node-sass -w scss/ -o dist/ --recursive"
+    "watch:scss": "node-sass -w scss/main.scss -o dist/main.css --recursive"
   },
   "dependencies": {
     "chart.js": "^4.2.1",

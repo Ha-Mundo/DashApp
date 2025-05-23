@@ -103,7 +103,7 @@ const tableMaker = data => {
 const loadData = async () => {
   try {
     showLoader();
-    const url = `http://substantiveresearch.pythonanywhere.com/`;
+    const url = `https://sector-api-7ih3.onrender.com/api/sectors`;
     const res = await fetch(url);
     console.log(res.ok);
     if (!res.ok) throw new Error(`Failed to fetch: ${res.status}`);
